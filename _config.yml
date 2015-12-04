@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Sgxiang
+title: sgxiang
 subtitle: Records of life.
 description: sgxiang的博客。关注技术与设计。记录生活点滴。
-author: Sgxiang
+author: sgxiang
 language: zh-Hans
 timezone:
 
@@ -65,7 +65,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: pisces
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
