@@ -72,4 +72,4 @@ theme: pisces
 deploy:
   type: git
   repository: git@github.com:sgxiang/sgxiang.github.com.git
-  branch: gh-pages
+  branch: master
