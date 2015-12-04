@@ -30,6 +30,7 @@ menu:
   # categories: /categories
   about: /about
   archives: /archives
+  bookmark: /bookmark
   # tags: /tags
   #commonweal: /404.html
 
@@ -45,7 +46,8 @@ menu_icons:
   home: home
   about: user
   categories: th
-  tags: tags
+  # tags: tags
+  bookmark: tags
   archives: archive
   commonweal: heartbeat
 
