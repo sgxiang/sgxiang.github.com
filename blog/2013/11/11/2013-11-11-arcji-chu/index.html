@@ -59,35 +59,26 @@
 
 <meta name="description" content="在手工内存管理中，需要retain一个对象让其可用。
 在ARC中只需让一个指针指向那个对象。有变量指针指向那个对象，那么它就会一直存在内存中。
-当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。
-1NSString *firstName = self.textField.text;
-firstName变量为文本框中内容字符串对象的所有者
-text属性也是所有者">
+当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARC基础">
 <meta property="og:url" content="http://www.sgxiang.com/blog/2013/11/11/2013-11-11-arcji-chu/index.html">
-<meta property="og:site_name" content="sgxiang">
+<meta property="og:site_name" content="sgxiang - 杨生权博客">
 <meta property="og:description" content="在手工内存管理中，需要retain一个对象让其可用。
 在ARC中只需让一个指针指向那个对象。有变量指针指向那个对象，那么它就会一直存在内存中。
-当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。
-1NSString *firstName = self.textField.text;
-firstName变量为文本框中内容字符串对象的所有者
-text属性也是所有者">
+当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。">
 <meta property="og:image" content="http://cdn5.raywenderlich.com/wp-content/uploads/2011/10/Pointers2-500x265.png">
 <meta property="og:image" content="http://cdn1.raywenderlich.com/wp-content/uploads/2011/10/Pointers3-500x235.png">
 <meta property="og:image" content="http://cdn1.raywenderlich.com/wp-content/uploads/2011/10/Pointers4-500x198.png">
 <meta property="og:image" content="http://cdn2.raywenderlich.com/wp-content/uploads/2011/10/Pointers5-500x241.png">
 <meta property="og:image" content="http://cdn2.raywenderlich.com/wp-content/uploads/2011/10/Pointers6-500x209.png">
 <meta property="og:image" content="http://cdn5.raywenderlich.com/wp-content/uploads/2011/10/Pointers7-500x212.png">
-<meta property="og:updated_time" content="2015-12-04T09:26:42.000Z">
+<meta property="og:updated_time" content="2015-12-07T06:32:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARC基础">
 <meta name="twitter:description" content="在手工内存管理中，需要retain一个对象让其可用。
 在ARC中只需让一个指针指向那个对象。有变量指针指向那个对象，那么它就会一直存在内存中。
-当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。
-1NSString *firstName = self.textField.text;
-firstName变量为文本框中内容字符串对象的所有者
-text属性也是所有者">
+当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。">
 
 
 
@@ -105,7 +96,7 @@ text属性也是所有者">
   };
 </script>
 
-  <title> ARC基础 | sgxiang </title>
+  <title> ARC基础 | sgxiang - 杨生权博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,11 +132,11 @@ text属性也是所有者">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">sgxiang</span>
+      <span class="site-title">sgxiang - 杨生权博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Records of life.</p>
+  <p class="site-subtitle">广东广州 iOS开发工程师</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -318,11 +309,11 @@ text属性也是所有者">
         <p>在手工内存管理中，需要retain一个对象让其可用。</p>
 <p>在ARC中只需让一个指针指向那个对象。有变量指针指向那个对象，那么它就会一直存在内存中。</p>
 <p>当指针指向另外一个对象或不存在的时候，那个关联的对象才会被释放掉。</p>
+<a id="more"></a>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *firstName = <span class="keyword">self</span><span class="variable">.textField</span><span class="variable">.text</span>;</span><br></pre></td></tr></table></figure>
 <p>firstName变量为文本框中内容字符串对象的所有者</p>
 <p>text属性也是所有者</p>
 <p><img src="http://cdn5.raywenderlich.com/wp-content/uploads/2011/10/Pointers2-500x265.png" alt=""></p>
-<a id="more"></a>
 <p>当用户输入新的文字时</p>
 <p>text–&gt;新的</p>
 <p>firstName–&gt;旧的</p>
@@ -468,19 +459,19 @@ text属性也是所有者">
                src="https://avatars1.githubusercontent.com/u/1848759?v=3&s=460"
                alt="sgxiang" />
           <p class="site-author-name" itemprop="name">sgxiang</p>
-          <p class="site-description motion-element" itemprop="description">sgxiang的博客。关注技术与设计。记录生活点滴。</p>
+          <p class="site-description motion-element" itemprop="description">目前就职于 一起进口网</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               
           </div>

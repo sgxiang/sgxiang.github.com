@@ -57,8 +57,7 @@
 
 
 
-<meta name="description" content="##1.轻量化的表视图控制器
-
+<meta name="description" content="1.轻量化的表视图控制器
 将Data Source和其他Protocols剥离开视图控制器
 将业务的逻辑处理移到Model层
 创建Store类，用来处理数据加载，缓存，数据库配置等。
@@ -67,19 +66,17 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="整洁的表视图">
 <meta property="og:url" content="http://www.sgxiang.com/blog/2014/01/06/2014-01-06-zheng-ji-de-biao-shi-tu/index.html">
-<meta property="og:site_name" content="sgxiang">
-<meta property="og:description" content="##1.轻量化的表视图控制器
-
+<meta property="og:site_name" content="sgxiang - 杨生权博客">
+<meta property="og:description" content="1.轻量化的表视图控制器
 将Data Source和其他Protocols剥离开视图控制器
 将业务的逻辑处理移到Model层
 创建Store类，用来处理数据加载，缓存，数据库配置等。
 将Web服务逻辑移到Model层
 将View代码移到View Layer">
-<meta property="og:updated_time" content="2015-12-04T09:26:42.000Z">
+<meta property="og:updated_time" content="2015-12-07T06:37:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整洁的表视图">
-<meta name="twitter:description" content="##1.轻量化的表视图控制器
-
+<meta name="twitter:description" content="1.轻量化的表视图控制器
 将Data Source和其他Protocols剥离开视图控制器
 将业务的逻辑处理移到Model层
 创建Store类，用来处理数据加载，缓存，数据库配置等。
@@ -102,7 +99,7 @@
   };
 </script>
 
-  <title> 整洁的表视图 | sgxiang </title>
+  <title> 整洁的表视图 | sgxiang - 杨生权博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,11 +135,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">sgxiang</span>
+      <span class="site-title">sgxiang - 杨生权博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Records of life.</p>
+  <p class="site-subtitle">广东广州 iOS开发工程师</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -312,8 +309,7 @@
       
 
       
-        <p>##1.轻量化的表视图控制器</p>
-<ol>
+        <h3 id="1-轻量化的表视图控制器">1.轻量化的表视图控制器</h3><ol>
 <li>将Data Source和其他Protocols剥离开视图控制器</li>
 <li>将业务的逻辑处理移到Model层</li>
 <li>创建Store类，用来处理数据加载，缓存，数据库配置等。</li>
@@ -321,25 +317,18 @@
 <li>将View代码移到View Layer</li>
 </ol>
 <a id="more"></a>
-<p>##2.整洁的表视图</p>
-<p>###2.1子视图控制器</p>
-<p>可以将一个表视图添加到另一个视图控制器，这样表视图控制器只需管理表视图，而父视图可以管理其他额外的界面元素。</p>
+<h2 id="2-整洁的表视图">2.整洁的表视图</h2><h3 id="2-1子视图控制器">2.1子视图控制器</h3><p>可以将一个表视图添加到另一个视图控制器，这样表视图控制器只需管理表视图，而父视图可以管理其他额外的界面元素。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addPhotoDetailsTableView&#123;</span><br><span class="line">	DetailsViewController *details = [[DetailsViewController alloc] init];</span><br><span class="line">	details<span class="variable">.photo</span> = <span class="keyword">self</span><span class="variable">.photo</span>;</span><br><span class="line">	details<span class="variable">.delegate</span> = <span class="keyword">self</span>;</span><br><span class="line">	[<span class="keyword">self</span> addChildViewController:details];</span><br><span class="line">	<span class="built_in">CGRect</span> frame = <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.bounds</span>;</span><br><span class="line">	frame<span class="variable">.origin</span><span class="variable">.y</span> = <span class="number">110</span>;</span><br><span class="line">	details<span class="variable">.view</span><span class="variable">.frame</span> = frame;</span><br><span class="line">	[<span class="keyword">self</span><span class="variable">.view</span> addSubview:details<span class="variable">.view</span>];</span><br><span class="line">	[details didMoveToParentViewController:<span class="keyword">self</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>表视图可以设置代理让父视图去响应。</p>
-<p>###2.2分离关注点</p>
-<p>####桥接模型对象和单元之间的差距</p>
+<h3 id="2-2分离关注点">2.2分离关注点</h3><p>####桥接模型对象和单元之间的差距</p>
 <p>我们经常将一个处理视图显示数据的任务放在表示图的数据来源里：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</span><br><span class="line">	PhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:<span class="string">@"PhotoCell"</span>];</span><br><span class="line">	Photo *photo = [<span class="keyword">self</span> itemAtIndexPath:indexPath];	cell<span class="variable">.photoTitleLabel</span><span class="variable">.text</span> = photo<span class="variable">.name</span>;</span><br><span class="line">	<span class="built_in">NSString</span>* date = [<span class="keyword">self</span><span class="variable">.dateFormatter</span> stringFromDate:photo<span class="variable">.creationDate</span>];</span><br><span class="line">	cell<span class="variable">.photoDateLabel</span><span class="variable">.text</span> = date;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在上面的代码中，数据源和cell的设计逻辑绑定在一起。我们可以将这部分放在cell的类别里重构：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">PhotoCell</span> (<span class="title">ConfigureForPhoto</span>)</span></span><br><span class="line">- (<span class="keyword">void</span>)configureForPhoto:(Photo *)photo&#123;</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.photoTitleLabel</span><span class="variable">.text</span> = photo<span class="variable">.name</span>;</span><br><span class="line">	<span class="built_in">NSString</span>* date = [<span class="keyword">self</span><span class="variable">.dateFormatter</span> stringFromDate:photo<span class="variable">.creationDate</span>];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.photoDateLabel</span><span class="variable">.text</span> = date;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <p>这样在调用的时候数据源的代码就会很清晰，同时将关注点分离开了。</p>
-<p>###2.3使cell可重用</p>
-<p>####在cell中处理cell的状态</p>
-<p>比如设置cell高亮和选中状态等。可以把这段逻辑放在cell中。</p>
-<p>####处理多种cell类型</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *key = <span class="keyword">self</span><span class="variable">.keys</span>[(<span class="built_in">NSUInteger</span>) indexPath<span class="variable">.row</span>];</span><br><span class="line">    <span class="keyword">id</span> value = [<span class="keyword">self</span><span class="variable">.photo</span> valueForKey:key];</span><br><span class="line">    <span class="built_in">UITableViewCell</span> *cell;</span><br><span class="line">    <span class="keyword">if</span> ([key isEqual:PhotoRatingKey]) &#123;</span><br><span class="line">        cell = [<span class="keyword">self</span> cellForRating:value indexPath:indexPath];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cell = [<span class="keyword">self</span> detailCellForKey:key value:value];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cell;</span><br><span class="line">&#125; </span><br><span class="line">- (RatingCell *)cellForRating:(<span class="built_in">NSNumber</span> *)rating indexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line">- (<span class="built_in">UITableViewCell</span> *)detailCellForKey:(<span class="built_in">NSString</span> *)key value:(<span class="keyword">id</span>)value&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####table view的编辑</p>
-<p>在编辑过程中，表数据源通过代理方法来获得通知。将处理数据的任务放在模型层上，控制器扮演视图和模型层之间的协调者。这样逻辑模型会很容易测试，不用理会和控制器层的交互任务。</p>
+<h3 id="2-3使cell可重用">2.3使cell可重用</h3><h4 id="在cell中处理cell的状态">在cell中处理cell的状态</h4><p>比如设置cell高亮和选中状态等。可以把这段逻辑放在cell中。</p>
+<h4 id="处理多种cell类型">处理多种cell类型</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *key = <span class="keyword">self</span><span class="variable">.keys</span>[(<span class="built_in">NSUInteger</span>) indexPath<span class="variable">.row</span>];</span><br><span class="line">    <span class="keyword">id</span> value = [<span class="keyword">self</span><span class="variable">.photo</span> valueForKey:key];</span><br><span class="line">    <span class="built_in">UITableViewCell</span> *cell;</span><br><span class="line">    <span class="keyword">if</span> ([key isEqual:PhotoRatingKey]) &#123;</span><br><span class="line">        cell = [<span class="keyword">self</span> cellForRating:value indexPath:indexPath];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cell = [<span class="keyword">self</span> detailCellForKey:key value:value];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cell;</span><br><span class="line">&#125; </span><br><span class="line">- (RatingCell *)cellForRating:(<span class="built_in">NSNumber</span> *)rating indexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line">- (<span class="built_in">UITableViewCell</span> *)detailCellForKey:(<span class="built_in">NSString</span> *)key value:(<span class="keyword">id</span>)value&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="table_view的编辑">table view的编辑</h4><p>在编辑过程中，表数据源通过代理方法来获得通知。将处理数据的任务放在模型层上，控制器扮演视图和模型层之间的协调者。这样逻辑模型会很容易测试，不用理会和控制器层的交互任务。</p>
 
       
     </div>
@@ -351,16 +340,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2014/01/03/2014-01-03-appkai-fa-bi-ji-tian-gong-oa/" rel="next" title="【APP开发笔记】天工OA">
-                <i class="fa fa-chevron-left"></i> 【APP开发笔记】天工OA
+              <a href="/blog/2013/11/22/2013-11-22-shi-yong-guan-lian-yin-yong-zai-lei-mu-zhong-shi-xian-shu-xing/" rel="next" title="使用关联引用在类目中实现属性">
+                <i class="fa fa-chevron-left"></i> 使用关联引用在类目中实现属性
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2014/01/07/2014-01-07-appkai-fa-bi-ji-ye-wu-tong/" rel="prev" title="【APP开发笔记】业务通">
-                【APP开发笔记】业务通 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2014/01/11/2014-01-11-mantleshi-yong/" rel="prev" title="Mantle使用">
+                Mantle使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -447,19 +436,19 @@
                src="https://avatars1.githubusercontent.com/u/1848759?v=3&s=460"
                alt="sgxiang" />
           <p class="site-author-name" itemprop="name">sgxiang</p>
-          <p class="site-description motion-element" itemprop="description">sgxiang的博客。关注技术与设计。记录生活点滴。</p>
+          <p class="site-description motion-element" itemprop="description">目前就职于 一起进口网</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
@@ -535,7 +524,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-轻量化的表视图控制器"><span class="nav-number">1.</span> <span class="nav-text">1.轻量化的表视图控制器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-整洁的表视图"><span class="nav-number"></span> <span class="nav-text">2.整洁的表视图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1子视图控制器"><span class="nav-number">1.</span> <span class="nav-text">2.1子视图控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2分离关注点"><span class="nav-number">2.</span> <span class="nav-text">2.2分离关注点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3使cell可重用"><span class="nav-number">3.</span> <span class="nav-text">2.3使cell可重用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在cell中处理cell的状态"><span class="nav-number">3.1.</span> <span class="nav-text">在cell中处理cell的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理多种cell类型"><span class="nav-number">3.2.</span> <span class="nav-text">处理多种cell类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#table_view的编辑"><span class="nav-number">3.3.</span> <span class="nav-text">table view的编辑</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

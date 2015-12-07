@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="###writeToFile:atomically:
-12345678910111213NSDictionary *glossary = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;TestClass&quot;,@&quot;className&quot;,@&quot;TestText&quot;,@&quot;classText&quot;, nil];if ([glossary writeToFile:@&quot;glo">
+<meta name="description" content="oc归档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oc归档">
 <meta property="og:url" content="http://www.sgxiang.com/blog/2013/11/10/2013-11-10-ocgui-dang/index.html">
-<meta property="og:site_name" content="sgxiang">
-<meta property="og:description" content="###writeToFile:atomically:
-12345678910111213NSDictionary *glossary = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;TestClass&quot;,@&quot;className&quot;,@&quot;TestText&quot;,@&quot;classText&quot;, nil];if ([glossary writeToFile:@&quot;glo">
-<meta property="og:updated_time" content="2015-12-04T09:26:42.000Z">
+<meta property="og:site_name" content="sgxiang - 杨生权博客">
+<meta property="og:description" content="oc归档">
+<meta property="og:updated_time" content="2015-12-07T06:38:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oc归档">
-<meta name="twitter:description" content="###writeToFile:atomically:
-12345678910111213NSDictionary *glossary = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;TestClass&quot;,@&quot;className&quot;,@&quot;TestText&quot;,@&quot;classText&quot;, nil];if ([glossary writeToFile:@&quot;glo">
+<meta name="twitter:description" content="oc归档">
 
 
 
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title> oc归档 | sgxiang </title>
+  <title> oc归档 | sgxiang - 杨生权博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -123,11 +120,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">sgxiang</span>
+      <span class="site-title">sgxiang - 杨生权博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Records of life.</p>
+  <p class="site-subtitle">广东广州 iOS开发工程师</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -297,16 +294,12 @@
       
 
       
-        <p>###writeToFile:atomically:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *glossary = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"TestClass"</span>,<span class="string">@"className"</span>,<span class="string">@"TestText"</span>,<span class="string">@"classText"</span>, <span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ([glossary writeToFile:<span class="string">@"glossary"</span> atomically:<span class="literal">YES</span>]==<span class="literal">NO</span>) &#123;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"save to file failed"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"succeed"</span>);</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line"><span class="built_in">NSDictionary</span> *gly =  [<span class="built_in">NSDictionary</span> dictionaryWithContentsOfFile:<span class="string">@"glossary"</span>];</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> gly) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@:%@"</span>,key,[glossary objectForKey:key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>oc归档</p>
 <a id="more"></a>
-<p>###NSKeyedArchiver</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *glossary = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"TestClass"</span>,<span class="string">@"className"</span>,<span class="string">@"TestText"</span>,<span class="string">@"classText"</span>, <span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line">[<span class="built_in">NSKeyedArchiver</span> archiveRootObject:glossary toFile:<span class="string">@"glossary.archive"</span>];</span><br><span class="line">        </span><br><span class="line"><span class="built_in">NSDictionary</span> *read = [<span class="built_in">NSKeyedUnarchiver</span> unarchiveObjectWithFile:<span class="string">@"glossary.archive"</span>];</span><br><span class="line">        </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> read) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@:%@"</span>,key,[glossary objectForKey:key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###归档自定义对象</p>
-<p>#####对象要实现NSCoding协议和encodeWithCoder:及initWithCoder:方法</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)encodeWithCoder:(<span class="built_in">NSCoder</span> *)aCoder&#123;</span><br><span class="line">	[aCoder encodeObject:_name forKey:<span class="string">@"name"</span>];</span><br><span class="line">    [aCoder encodeInt:_age forKey:<span class="string">@"age"</span>];</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">-(<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span> *)aDecoder&#123;</span><br><span class="line">    _name = [aDecoder decodeObjectForKey:<span class="string">@"name"</span>];</span><br><span class="line">    _age = [aDecoder decodeIntForKey:<span class="string">@"age"</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###使用NSData</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableData</span> *dataArea = [<span class="built_in">NSMutableData</span> data];</span><br><span class="line"><span class="built_in">NSKeyedArchiver</span> *archiver = [[<span class="built_in">NSKeyedArchiver</span> alloc]initForWritingWithMutableData:dataArea];</span><br><span class="line">	</span><br><span class="line">[archiver encodeObject:_name forKey:<span class="string">@"name"</span>];</span><br><span class="line">[archiver finishEncoding];</span><br><span class="line">	</span><br><span class="line">[dataArea writeToFile:<span class="string">@"fileName"</span> atomically:<span class="literal">YES</span>];</span><br><span class="line">```	</span><br><span class="line">	</span><br><span class="line">读取的时候</span><br><span class="line"></span><br><span class="line">```objc</span><br><span class="line"><span class="built_in">NSMutableData</span> *dataArea = [<span class="built_in">NSMutableData</span> data];</span><br><span class="line"><span class="built_in">NSKeyedUnarchiver</span> *unarchiver = [[<span class="built_in">NSKeyedUnarchiver</span> alloc]initForReadingWithData:dataArea];</span><br><span class="line">	</span><br><span class="line">test = [unarchiver decodeObjectForKey:<span class="string">@"name"</span>];</span><br><span class="line">	</span><br><span class="line">[unarchiver finishDecoding];</span><br></pre></td></tr></table></figure>
+<h3 id="writeToFile:atomically:">writeToFile:atomically:</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *glossary = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"TestClass"</span>,<span class="string">@"className"</span>,<span class="string">@"TestText"</span>,<span class="string">@"classText"</span>, <span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ([glossary writeToFile:<span class="string">@"glossary"</span> atomically:<span class="literal">YES</span>]==<span class="literal">NO</span>) &#123;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"save to file failed"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"succeed"</span>);</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line"><span class="built_in">NSDictionary</span> *gly =  [<span class="built_in">NSDictionary</span> dictionaryWithContentsOfFile:<span class="string">@"glossary"</span>];</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> gly) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@:%@"</span>,key,[glossary objectForKey:key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="NSKeyedArchiver">NSKeyedArchiver</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *glossary = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"TestClass"</span>,<span class="string">@"className"</span>,<span class="string">@"TestText"</span>,<span class="string">@"classText"</span>, <span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line">[<span class="built_in">NSKeyedArchiver</span> archiveRootObject:glossary toFile:<span class="string">@"glossary.archive"</span>];</span><br><span class="line">        </span><br><span class="line"><span class="built_in">NSDictionary</span> *read = [<span class="built_in">NSKeyedUnarchiver</span> unarchiveObjectWithFile:<span class="string">@"glossary.archive"</span>];</span><br><span class="line">        </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSString</span> *key <span class="keyword">in</span> read) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@:%@"</span>,key,[glossary objectForKey:key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="归档自定义对象">归档自定义对象</h3><h5 id="对象要实现NSCoding协议和encodeWithCoder:及initWithCoder:方法">对象要实现NSCoding协议和encodeWithCoder:及initWithCoder:方法</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)encodeWithCoder:(<span class="built_in">NSCoder</span> *)aCoder&#123;</span><br><span class="line">	[aCoder encodeObject:_name forKey:<span class="string">@"name"</span>];</span><br><span class="line">    [aCoder encodeInt:_age forKey:<span class="string">@"age"</span>];</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">-(<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span> *)aDecoder&#123;</span><br><span class="line">    _name = [aDecoder decodeObjectForKey:<span class="string">@"name"</span>];</span><br><span class="line">    _age = [aDecoder decodeIntForKey:<span class="string">@"age"</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用NSData">使用NSData</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableData</span> *dataArea = [<span class="built_in">NSMutableData</span> data];</span><br><span class="line"><span class="built_in">NSKeyedArchiver</span> *archiver = [[<span class="built_in">NSKeyedArchiver</span> alloc]initForWritingWithMutableData:dataArea];</span><br><span class="line">	</span><br><span class="line">[archiver encodeObject:_name forKey:<span class="string">@"name"</span>];</span><br><span class="line">[archiver finishEncoding];</span><br><span class="line">	</span><br><span class="line">[dataArea writeToFile:<span class="string">@"fileName"</span> atomically:<span class="literal">YES</span>];</span><br><span class="line">```	</span><br><span class="line">	</span><br><span class="line">读取的时候</span><br><span class="line"></span><br><span class="line">```objc</span><br><span class="line"><span class="built_in">NSMutableData</span> *dataArea = [<span class="built_in">NSMutableData</span> data];</span><br><span class="line"><span class="built_in">NSKeyedUnarchiver</span> *unarchiver = [[<span class="built_in">NSKeyedUnarchiver</span> alloc]initForReadingWithData:dataArea];</span><br><span class="line">	</span><br><span class="line">test = [unarchiver decodeObjectForKey:<span class="string">@"name"</span>];</span><br><span class="line">	</span><br><span class="line">[unarchiver finishDecoding];</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -413,19 +406,19 @@
                src="https://avatars1.githubusercontent.com/u/1848759?v=3&s=460"
                alt="sgxiang" />
           <p class="site-author-name" itemprop="name">sgxiang</p>
-          <p class="site-description motion-element" itemprop="description">sgxiang的博客。关注技术与设计。记录生活点滴。</p>
+          <p class="site-description motion-element" itemprop="description">目前就职于 一起进口网</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
@@ -501,7 +494,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#writeToFile:atomically:"><span class="nav-number">1.</span> <span class="nav-text">writeToFile:atomically:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NSKeyedArchiver"><span class="nav-number">2.</span> <span class="nav-text">NSKeyedArchiver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归档自定义对象"><span class="nav-number">3.</span> <span class="nav-text">归档自定义对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象要实现NSCoding协议和encodeWithCoder:及initWithCoder:方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">对象要实现NSCoding协议和encodeWithCoder:及initWithCoder:方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用NSData"><span class="nav-number">4.</span> <span class="nav-text">使用NSData</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

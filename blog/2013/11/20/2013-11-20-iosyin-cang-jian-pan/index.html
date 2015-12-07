@@ -57,25 +57,16 @@
 
 
 
-<meta name="description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：
-123-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event&amp;#123;	[self.view endEditing:YES];&amp;#125;
-另外的方法：
-12//用于拿view比较困难的">
+<meta name="description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios隐藏键盘">
 <meta property="og:url" content="http://www.sgxiang.com/blog/2013/11/20/2013-11-20-iosyin-cang-jian-pan/index.html">
-<meta property="og:site_name" content="sgxiang">
-<meta property="og:description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：
-123-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event&amp;#123;	[self.view endEditing:YES];&amp;#125;
-另外的方法：
-12//用于拿view比较困难的">
-<meta property="og:updated_time" content="2015-12-04T09:26:42.000Z">
+<meta property="og:site_name" content="sgxiang - 杨生权博客">
+<meta property="og:description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：">
+<meta property="og:updated_time" content="2015-12-07T06:32:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios隐藏键盘">
-<meta name="twitter:description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：
-123-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event&amp;#123;	[self.view endEditing:YES];&amp;#125;
-另外的方法：
-12//用于拿view比较困难的">
+<meta name="twitter:description" content="点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：">
 
 
 
@@ -93,7 +84,7 @@
   };
 </script>
 
-  <title> ios隐藏键盘 | sgxiang </title>
+  <title> ios隐藏键盘 | sgxiang - 杨生权博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -129,11 +120,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">sgxiang</span>
+      <span class="site-title">sgxiang - 杨生权博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Records of life.</p>
+  <p class="site-subtitle">广东广州 iOS开发工程师</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -304,6 +295,7 @@
 
       
         <p>点击UIViewController的任意地方，就可以dismiss keyboard,最简单的办法就是在VC中override以下方法：</p>
+<a id="more"></a>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event&#123;</span><br><span class="line">	[<span class="keyword">self</span><span class="variable">.view</span> endEditing:<span class="literal">YES</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另外的方法：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于拿view比较困难的时候</span></span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication]sendAction:<span class="keyword">@selector</span>(resignFirstResponder) to:<span class="literal">nil</span> from:<span class="literal">nil</span> forEvent:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
@@ -414,19 +406,19 @@
                src="https://avatars1.githubusercontent.com/u/1848759?v=3&s=460"
                alt="sgxiang" />
           <p class="site-author-name" itemprop="name">sgxiang</p>
-          <p class="site-description motion-element" itemprop="description">sgxiang的博客。关注技术与设计。记录生活点滴。</p>
+          <p class="site-description motion-element" itemprop="description">目前就职于 一起进口网</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               
           </div>

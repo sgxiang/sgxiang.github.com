@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ios 崩溃报告 异常处理" />
+  <meta name="keywords" content="iOS 崩溃报告 异常处理" />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="ios崩溃报告收集">
+<meta name="description" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios崩溃报告收集">
+<meta property="og:title" content="iOS崩溃报告收集">
 <meta property="og:url" content="http://www.sgxiang.com/blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/index.html">
-<meta property="og:site_name" content="sgxiang">
-<meta property="og:description" content="ios崩溃报告收集">
-<meta property="og:updated_time" content="2015-12-04T09:26:42.000Z">
+<meta property="og:site_name" content="sgxiang - 杨生权博客">
+<meta property="og:description" content="iOS">
+<meta property="og:updated_time" content="2015-12-07T06:48:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios崩溃报告收集">
-<meta name="twitter:description" content="ios崩溃报告收集">
+<meta name="twitter:title" content="iOS崩溃报告收集">
+<meta name="twitter:description" content="iOS">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> ios崩溃报告收集 | sgxiang </title>
+  <title> iOS崩溃报告收集 | sgxiang - 杨生权博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -120,11 +120,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">sgxiang</span>
+      <span class="site-title">sgxiang - 杨生权博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Records of life.</p>
+  <p class="site-subtitle">广东广州 iOS开发工程师</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -221,7 +221,7 @@
             
             
               
-                ios崩溃报告收集
+                iOS崩溃报告收集
               
             
           </h1>
@@ -274,7 +274,7 @@
 
           
           
-             <span id="/blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/" class="leancloud_visitors" data-flag-title="ios崩溃报告收集">
+             <span id="/blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/" class="leancloud_visitors" data-flag-title="iOS崩溃报告收集">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -294,7 +294,8 @@
       
 
       
-        <p>ios应用崩溃的时候，SDK提供了一个NSSetUncaughtExceptionHandler来处理异常。</p>
+        <p>iOS应用崩溃的时候，SDK提供了一个NSSetUncaughtExceptionHandler来处理异常。</p>
+<a id="more"></a>
 <p><code>NSSetUncaughtExceptionHandler(handleRootException);</code></p>
 <p>绑定到<code>handleRootException</code>中让其函数来处理异常。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> handleRootException( <span class="built_in">NSException</span>* exception )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span>* name = [ exception name ];</span><br><span class="line">    <span class="built_in">NSString</span>* reason = [ exception reason ];</span><br><span class="line">    <span class="built_in">NSArray</span>* symbols = [ exception callStackSymbols ];</span><br><span class="line">    <span class="built_in">NSMutableString</span>* strSymbols = [ [ <span class="built_in">NSMutableString</span> alloc ] init ];</span><br><span class="line">    <span class="keyword">for</span> ( <span class="built_in">NSString</span>* item <span class="keyword">in</span> symbols )</span><br><span class="line">    &#123;</span><br><span class="line">        [ strSymbols appendString: item ];</span><br><span class="line">        [ strSymbols appendString: <span class="string">@"\r\n"</span> ];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span>*   errorInfo = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@" *** Terminating app due to uncaught exception %@ , reason: %@  \r\n  *** First throw call stack: \r\n(\r\n  %@\r\n)"</span>, name, reason, strSymbols];</span><br><span class="line">    </span><br><span class="line">    logToFile(errorInfo);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -336,7 +337,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="/blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/"
-     data-title="ios崩溃报告收集"
+     data-title="iOS崩溃报告收集"
      data-content=""
      data-url="http://www.sgxiang.com//blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/">
   <div class="ds-share-inline">
@@ -366,7 +367,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="/blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/"
-           data-title="ios崩溃报告收集" data-url="http://www.sgxiang.com//blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/">
+           data-title="iOS崩溃报告收集" data-url="http://www.sgxiang.com//blog/2014/08/11/2014-08-11-iosbeng-kui-bao-gao-shou-ji/">
       </div>
     
   </div>
@@ -406,19 +407,19 @@
                src="https://avatars1.githubusercontent.com/u/1848759?v=3&s=460"
                alt="sgxiang" />
           <p class="site-author-name" itemprop="name">sgxiang</p>
-          <p class="site-description motion-element" itemprop="description">sgxiang的博客。关注技术与设计。记录生活点滴。</p>
+          <p class="site-description motion-element" itemprop="description">目前就职于 一起进口网</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
